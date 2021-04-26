@@ -1,8 +1,19 @@
 package com.springbootrefresher.springrefresher.Entity;
 
-import java.util.Date;
-
+import javax.persistence.*;
+@Entity
+@Table
 public class Book {
+    @Id
+    @SequenceGenerator(
+            name = "book_sequence",
+            sequenceName = "book_sequence",
+            allocationSize = 1
+    )
+    @GeneratedValue(
+            strategy =  GenerationType.SEQUENCE,
+            generator = "book_sequence"
+    )
     private long id;
     private String title;
     private String author;

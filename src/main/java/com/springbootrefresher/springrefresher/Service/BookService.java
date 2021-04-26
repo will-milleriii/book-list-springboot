@@ -1,21 +1,23 @@
 package com.springbootrefresher.springrefresher.Service;
 
 import com.springbootrefresher.springrefresher.Entity.Book;
+import com.springbootrefresher.springrefresher.Repository.BookRepository;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
+import org.springframework.stereotype.Service;
 
 import java.util.List;
-@Component
+@Service
 public class BookService {
 
+    private final BookRepository bookRepository;
+
+    @Autowired
+    public BookService(BookRepository bookRepository){
+        this.bookRepository = bookRepository;
+    }
+
     public List<Book> getBookList(){
-        return List.of(
-                new Book(
-                        1l,
-                        "Dune",
-                        "Frank Herbert",
-                        "Sci-Fi",
-                        1965
-                )
-        );
+        return bookRepository.findAll();
     }
 }
