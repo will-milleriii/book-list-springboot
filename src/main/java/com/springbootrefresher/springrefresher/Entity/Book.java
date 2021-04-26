@@ -7,13 +7,13 @@ public class Book {
     private String title;
     private String author;
     private String genre;
-    private Date yearPublished;
+    private Integer yearPublished;
 
     public Book(){
 
     }
 
-    public Book(long id, String title, String author, String genre, Date yearPublished) {
+    public Book(long id, String title, String author, String genre, Integer yearPublished) {
         this.id = id;
         this.title = title;
         this.author = author;
@@ -21,7 +21,7 @@ public class Book {
         this.yearPublished = yearPublished;
     }
 
-    public Book(String title, String author, String genre, Date yearPublished) {
+    public Book(String title, String author, String genre, Integer yearPublished) {
         this.title = title;
         this.author = author;
         this.genre = genre;
@@ -60,11 +60,11 @@ public class Book {
         this.genre = genre;
     }
 
-    public Date getYearPublished() {
+    public Integer getYearPublished() {
         return yearPublished;
     }
 
-    public void setYearPublished(Date yearPublished) {
+    public void setYearPublished(Integer yearPublished) {
         this.yearPublished = yearPublished;
     }
 
